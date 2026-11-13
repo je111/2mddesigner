@@ -1,0 +1,331 @@
+import LegalLayout from '../../components/legal/LegalLayout';
+
+const sections = [
+  { id: 'objet', title: 'Objet et champ d\'application' },
+  { id: 'commande', title: 'Passation de commande' },
+  { id: 'prix', title: 'Prix et tarification' },
+  { id: 'paiement', title: 'Modalités de paiement' },
+  { id: 'fabrication', title: 'Délais de fabrication' },
+  { id: 'livraison', title: 'Livraison et retrait' },
+  { id: 'retractation', title: 'Droit de rétractation' },
+  { id: 'garantie', title: 'Garantie' },
+  { id: 'propriete', title: 'Propriété intellectuelle' },
+  { id: 'donnees', title: 'Données personnelles' },
+  { id: 'litiges', title: 'Règlement des litiges' },
+  { id: 'contact-cgv', title: 'Contact' },
+];
+
+export default function CGV() {
+  return (
+    <LegalLayout
+      title="Conditions Générales de Vente"
+      subtitle="Les présentes Conditions Générales de Vente (CGV) régissent l'ensemble des relations commerciales entre 2MD Designer et ses clients pour toute commande de création personnalisée."
+      icon="📋"
+      lastUpdate="1er janvier 2026"
+      sections={sections}
+    >
+      <div className="info-box">
+        <p>
+          <strong>En résumé :</strong> toute commande passée auprès de 2MD Designer
+          implique l'acceptation sans réserve des présentes CGV. Un acompte de 50%
+          est requis pour lancer la fabrication. Les créations personnalisées
+          ne sont ni échangeables ni remboursables, sauf défaut de fabrication.
+        </p>
+      </div>
+
+      <h2 id="objet">1. Objet et champ d'application</h2>
+      <p>
+        Les présentes Conditions Générales de Vente (ci-après « CGV ») ont pour objet
+        de définir les droits et obligations des parties dans le cadre de la vente de
+        créations personnalisées proposées par <strong>2MD Designer</strong> (« le Studio »)
+        à ses clients (« le Client »).
+      </p>
+      <p>
+        Elles s'appliquent à toute commande passée sur le site <strong>2mddesigner.com</strong>,
+        par téléphone, WhatsApp, email, ou directement à l'atelier de Brazzaville.
+      </p>
+      <p>
+        Toute commande implique l'acceptation pleine et entière des présentes CGV
+        par le Client, sans restriction ni réserve.
+      </p>
+
+      <h2 id="commande">2. Passation de commande</h2>
+
+      <h3>2.1. Étapes de la commande</h3>
+      <p>La commande se déroule en 4 étapes :</p>
+      <ul>
+        <li><strong>Étape 1 — Discussion :</strong> échange par téléphone, WhatsApp, email ou à l'atelier.</li>
+        <li><strong>Étape 2 — Devis & maquette :</strong> devis chiffré et maquette numérique gratuite.</li>
+        <li><strong>Étape 3 — Validation & acompte :</strong> validation du devis et versement de 50%.</li>
+        <li><strong>Étape 4 — Fabrication & livraison :</strong> réalisation puis livraison ou retrait.</li>
+      </ul>
+
+      <h3>2.2. Validation de la maquette</h3>
+      <p>
+        Avant toute fabrication, le Studio envoie systématiquement une maquette numérique
+        au Client. Le Client dispose de <strong>5 jours ouvrés</strong> pour valider ou
+        demander des modifications (jusqu'à 2 séries gratuites).
+      </p>
+      <p>
+        La validation écrite (par message ou email) de la maquette vaut acceptation
+        définitive du design par le Client. Aucune modification ne sera possible après
+        le lancement de la fabrication.
+      </p>
+
+      <h3>2.3. Fourniture des fichiers</h3>
+      <p>
+        Le Client s'engage à fournir des photos et visuels de qualité suffisante.
+        Le Studio se réserve le droit de refuser un fichier inadapté et d'en demander un nouveau.
+      </p>
+
+      <h2 id="prix">3. Prix et tarification</h2>
+      <p>
+        Les prix des créations sont indiqués en <strong>Francs CFA (FCFA)</strong>,
+        toutes taxes comprises. Ils sont affichés sur le site, au catalogue et/ou
+        dans le devis personnalisé envoyé au Client.
+      </p>
+
+      <h3>3.1. Suppléments éventuels</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Supplément indicatif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Format grand (A3, XL)</td><td>+ 3 000 à + 6 000 FCFA</td></tr>
+          <tr><td>Style couleur / premium</td><td>+ 2 000 à + 5 000 FCFA</td></tr>
+          <tr><td>Emballage cadeau</td><td>+ 3 000 FCFA</td></tr>
+          <tr><td>Livraison Brazzaville</td><td>+ 2 000 FCFA</td></tr>
+          <tr><td>Livraison autres villes du Congo</td><td>+ 5 000 FCFA</td></tr>
+          <tr><td>Traitement urgent</td><td>+ 30% du montant total</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3.2. Remises quantité</h3>
+      <ul>
+        <li>À partir de <strong>10 pièces identiques</strong> : -10%</li>
+        <li>À partir de <strong>20 pièces identiques</strong> : -15%</li>
+        <li>À partir de <strong>50 pièces identiques</strong> : devis personnalisé (jusqu'à -25%)</li>
+      </ul>
+
+      <div className="warning-box">
+        <p>
+          <strong>Attention :</strong> les prix affichés peuvent évoluer à tout moment
+          en fonction du coût des matières premières. Seul le prix indiqué sur le devis
+          accepté est contractuel pour une commande donnée.
+        </p>
+      </div>
+
+      <h2 id="paiement">4. Modalités de paiement</h2>
+
+      <h3>4.1. Acompte obligatoire</h3>
+      <p>
+        La fabrication de toute commande personnalisée démarre après versement d'un
+        <strong> acompte de 50% du montant total</strong>. Sans cet acompte, aucune
+        fabrication ne sera lancée.
+      </p>
+
+      <h3>4.2. Modes de paiement acceptés</h3>
+      <ul>
+        <li><strong>MTN Mobile Money</strong></li>
+        <li><strong>Airtel Money</strong></li>
+        <li><strong>Espèces</strong> à l'atelier</li>
+        <li><strong>Virement bancaire</strong> (pour entreprises)</li>
+        <li><strong>Paiement à la livraison</strong> (Brazzaville uniquement, pour le solde)</li>
+      </ul>
+
+      <h3>4.3. Solde</h3>
+      <p>
+        Le solde restant (50%) est à régler <strong>au moment de la livraison ou du retrait</strong>,
+        avant remise de la création au Client.
+      </p>
+
+      <h3>4.4. Retard de paiement</h3>
+      <p>Tout retard de paiement peut entraîner :</p>
+      <ul>
+        <li>La suspension de la commande en cours</li>
+        <li>Des pénalités de retard de 5% du montant dû par mois entamé</li>
+        <li>L'annulation de la commande après 30 jours de retard</li>
+      </ul>
+
+      <h2 id="fabrication">5. Délais de fabrication</h2>
+      <p>Les délais de fabrication sont donnés à titre indicatif et courent à compter de la validation de la maquette et du versement de l'acompte :</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Type de création</th>
+            <th>Délai moyen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Porte-clés</td><td>24 heures</td></tr>
+          <tr><td>Tasses</td><td>24 – 48 heures</td></tr>
+          <tr><td>T-shirts, chapeaux</td><td>48 – 72 heures</td></tr>
+          <tr><td>Portraits</td><td>3 – 7 jours</td></tr>
+          <tr><td>Coussins, cadres photo</td><td>3 – 5 jours</td></tr>
+          <tr><td>Décoration d'intérieur</td><td>7 – 15 jours</td></tr>
+          <tr><td>Commandes en gros (20+ pièces)</td><td>7 – 21 jours</td></tr>
+        </tbody>
+      </table>
+
+      <p>Ces délais sont suspendus en cas de :</p>
+      <ul>
+        <li>Attente de validation de la maquette par le Client</li>
+        <li>Fourniture tardive des fichiers par le Client</li>
+        <li>Force majeure</li>
+      </ul>
+
+      <h2 id="livraison">6. Livraison et retrait</h2>
+
+      <h3>6.1. Retrait à l'atelier</h3>
+      <p>
+        Le Client peut retirer sa commande directement à l'atelier
+        <strong> 2MD Designer</strong>, à Brazzaville. Le retrait est gratuit.
+      </p>
+
+      <h3>6.2. Livraison à Brazzaville</h3>
+      <p>
+        Livraison à domicile dans un délai de <strong>24 à 48h</strong> après achèvement.
+        Frais : <strong>2 000 FCFA</strong>.
+      </p>
+
+      <h3>6.3. Livraison autres villes du Congo</h3>
+      <p>
+        Nous livrons à Pointe-Noire, Dolisie, Owando, etc. via nos partenaires logistiques.
+        Frais : <strong>à partir de 5 000 FCFA</strong>. Délai : <strong>3 à 7 jours ouvrés</strong>.
+      </p>
+
+      <h3>6.4. Force majeure</h3>
+      <p>
+        Le Studio ne peut être tenu responsable d'un retard de livraison causé par
+        un cas de force majeure (catastrophe naturelle, troubles politiques, etc.).
+      </p>
+
+      <h3>6.5. Vérification à la réception</h3>
+      <p>
+        Le Client s'engage à vérifier l'état de sa commande lors de la réception.
+        Toute anomalie doit être signalée dans les <strong>48 heures</strong> suivant
+        la réception, photos à l'appui.
+      </p>
+
+      <h2 id="retractation">7. Droit de rétractation</h2>
+
+      <div className="warning-box">
+        <p>
+          <strong>Important :</strong> conformément à la réglementation sur les biens
+          personnalisés, le Client <strong>ne bénéficie pas du droit de rétractation</strong>
+          une fois la fabrication lancée, car chaque création est unique et réalisée
+          sur mesure selon ses spécifications.
+        </p>
+      </div>
+
+      <h3>7.1. Avant lancement de la fabrication</h3>
+      <p>
+        Tant que la fabrication n'a pas débuté, le Client peut annuler sa commande
+        sans frais.
+      </p>
+
+      <h3>7.2. Après versement de l'acompte</h3>
+      <p>
+        Une fois l'acompte versé et la maquette validée, la commande est ferme et
+        définitive. En cas d'annulation par le Client, <strong>l'acompte reste
+        acquis au Studio</strong> en compensation du travail déjà réalisé.
+      </p>
+
+      <h2 id="garantie">8. Garantie et défauts de fabrication</h2>
+
+      <h3>8.1. Garantie qualité</h3>
+      <p>
+        2MD Designer garantit la qualité de ses créations. En cas de
+        <strong> défaut de fabrication avéré</strong>, le Studio s'engage à :
+      </p>
+      <ul>
+        <li>Reprendre la création à ses frais, ou</li>
+        <li>Rembourser intégralement le Client (acompte inclus).</li>
+      </ul>
+
+      <h3>8.2. Signalement d'un défaut</h3>
+      <p>
+        Tout défaut doit être signalé dans les <strong>7 jours</strong> suivant la réception,
+        accompagné de photos claires montrant le problème.
+      </p>
+
+      <h3>8.3. Ce qui n'est pas couvert</h3>
+      <p>La garantie ne couvre pas :</p>
+      <ul>
+        <li>L'usure normale du produit</li>
+        <li>Les dommages causés par une mauvaise utilisation</li>
+        <li>Les différences de couleurs mineures entre la maquette et le rendu final</li>
+        <li>Les demandes de modification après validation de la maquette</li>
+      </ul>
+
+      <h2 id="propriete">9. Propriété intellectuelle</h2>
+
+      <h3>9.1. Droits du Client sur ses fichiers</h3>
+      <p>
+        Le Client garantit être titulaire des droits sur les photos, textes et visuels
+        qu'il transmet au Studio. Il est seul responsable en cas de réclamation d'un tiers.
+      </p>
+
+      <h3>9.2. Droits du Studio sur les créations</h3>
+      <p>
+        Le Studio conserve tous les droits sur sa réalisation artistique. Le Client
+        dispose d'un droit d'usage personnel de la création livrée, mais ne peut la
+        reproduire à des fins commerciales sans accord écrit.
+      </p>
+
+      <h3>9.3. Portfolio</h3>
+      <p>
+        Sauf opposition écrite du Client, le Studio se réserve le droit de présenter
+        les créations finalisées dans son portfolio.
+      </p>
+
+      <h2 id="donnees">10. Données personnelles</h2>
+      <p>
+        Les données personnelles collectées dans le cadre de la commande sont traitées
+        conformément à notre <a href="/confidentialite">Politique de confidentialité</a>.
+      </p>
+      <p>
+        Les photos transmises sont supprimées <strong>30 jours après livraison</strong>,
+        sauf accord explicite du Client pour les conserver en portfolio.
+      </p>
+
+      <h2 id="litiges">11. Règlement des litiges</h2>
+
+      <h3>11.1. Résolution amiable</h3>
+      <p>
+        En cas de désaccord, les parties s'engagent à rechercher une solution amiable.
+        Le Client peut nous contacter à <a href="mailto:2mddesigner@gmail.com">2mddesigner@gmail.com</a>.
+      </p>
+
+      <h3>11.2. Médiation</h3>
+      <p>
+        Si aucun accord amiable n'est trouvé, les parties peuvent faire appel à un
+        médiateur indépendant, dont les frais sont partagés par moitié.
+      </p>
+
+      <h3>11.3. Droit applicable</h3>
+      <p>
+        Les présentes CGV sont régies par le <strong>droit congolais</strong>.
+        En cas de litige persistant, les tribunaux compétents de
+        <strong> Brazzaville</strong> seront seuls saisis.
+      </p>
+
+      <h2 id="contact-cgv">12. Contact</h2>
+      <p>Pour toute question relative aux présentes CGV, vous pouvez nous contacter :</p>
+
+      <div className="info-box">
+        <p><strong>2MD Designer</strong></p>
+        <p>
+          Brazzaville, République du Congo<br />
+          ✉️ <a href="mailto:2mddesigner@gmail.com">2mddesigner@gmail.com</a><br />
+          📞 +242 06 492 08 49<br />
+          💬 WhatsApp : +242 06 492 08 49
+        </p>
+      </div>
+    </LegalLayout>
+  );
+}
