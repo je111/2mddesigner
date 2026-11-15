@@ -1,0 +1,63 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "products": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53'"
+    },
+
+    "settings": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53'"
+    },
+
+    "productLikes": {
+      ".read": true,
+      "$productId": {
+        "$visitorId": {
+          ".write": "root.child('products').child($productId).exists() && $visitorId.length <= 64",
+          ".validate": "newData.isBoolean() && newData.val() === true"
+        }
+      }
+    },
+
+    "orders": {
+      ".read": "auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53'",
+      "$orderId": {
+        ".write": "(auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53') || (!data.exists() && newData.exists())",
+        ".validate": "(auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53') || (newData.hasChildren(['clientName', 'clientPhone', 'product', 'quantity', 'total', 'status', 'paymentMode', 'paymentStatus', 'createdAt']) && newData.child('status').val() === 'pending' && newData.child('paymentStatus').val() === 'pending')",
+        "clientName": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100" },
+        "clientPhone": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 30" },
+        "clientEmail": { ".validate": "newData.isString() && newData.val().length <= 150" },
+        "clientAddress": { ".validate": "newData.isString() && newData.val().length <= 300" },
+        "product": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 150" },
+        "quantity": { ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 1000" },
+        "total": { ".validate": "newData.isNumber() && newData.val() >= 0" },
+        "notes": { ".validate": "newData.isString() && newData.val().length <= 2000" },
+        "customText": { ".validate": "newData.isString() && newData.val().length <= 1000" }
+      }
+    },
+
+    "contacts": {
+      ".read": "auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53'",
+      "$messageId": {
+        ".write": "(auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53') || (!data.exists() && newData.exists())",
+        ".validate": "(auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53') || (newData.hasChildren(['name', 'message', 'status', 'createdAt']) && newData.child('status').val() === 'new')",
+        "name": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 100" },
+        "email": { ".validate": "newData.isString() && newData.val().length <= 150" },
+        "phone": { ".validate": "newData.isString() && newData.val().length <= 30" },
+        "message": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 5000" },
+        "projectType": { ".validate": "newData.isString() && newData.val().length <= 100" }
+      }
+    },
+
+    "admin_logs": {
+      ".read": "auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53'",
+      "$logId": {
+        ".write": "auth != null && auth.uid === 'xcKzNPzs3mhh711A5IcOE2d9HO53' && !data.exists()"
+      }
+    }
+  }
+}
