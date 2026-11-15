@@ -4,13 +4,10 @@
  * Body : { order }
  */
 
-export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+import { guard, BREVO_TIMEOUT_MS } from './_guard.js';
 
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+export default async function handler(req, res) {
+  if (!guard(req, res)) return;
 
   const { order } = req.body || {};
 
@@ -255,6 +252,7 @@ export default async function handler(req, res) {
             'content-type': 'application/json',
           },
           body: JSON.stringify(email),
+          signal: AbortSignal.timeout(BREVO_TIMEOUT_MS),
         }).then(async (r) => {
           if (!r.ok) throw new Error(await r.text());
           return r.json();
