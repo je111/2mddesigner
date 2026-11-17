@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://2md-designer.vercel.app/sitemap.xml
+Sitemap: https://www.2md-designer.com/sitemap.xml
