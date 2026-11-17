@@ -79,9 +79,15 @@ export default function Hero() {
                 {/* Image de fond */}
                 <img
                   src="https://res.cloudinary.com/ioochnlo/image/upload/w_800,h_1000,c_fill,q_auto,f_auto/v1790591113/2md-designer/orders/twygwbpi2jmazlbchthn.png"
+                  srcSet="https://res.cloudinary.com/ioochnlo/image/upload/w_480,h_600,c_fill,q_auto,f_auto/v1790591113/2md-designer/orders/twygwbpi2jmazlbchthn.png 480w, https://res.cloudinary.com/ioochnlo/image/upload/w_800,h_1000,c_fill,q_auto,f_auto/v1790591113/2md-designer/orders/twygwbpi2jmazlbchthn.png 800w"
+                  sizes="(min-width: 1024px) 480px, 90vw"
+                  width={800}
+                  height={1000}
                   alt="Création 2MD Designer — Portrait personnalisé fait main à Brazzaville"
                   className="w-full h-full object-cover"
                   loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                 />
 
                 {/* Motif africain léger */}

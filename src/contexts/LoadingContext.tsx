@@ -1,17 +1,11 @@
-﻿import { useState, useCallback, useEffect, type ReactNode } from 'react';
+import { useState, useCallback, type ReactNode } from 'react';
 import { LoadingContext } from './loading';
 import LoadingScreen from '../components/ui/LoadingScreen';
 
 export function LoadingProvider({ children }: { children: ReactNode }) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const startupTimer = window.setTimeout(() => {
-      setIsLoading(false);
-    }, 900);
-
-    return () => window.clearTimeout(startupTimer);
-  }, []);
+  // Pas d'écran de chargement au démarrage : la page s'affiche dès qu'elle est prête
+  // (meilleur score PageSpeed). Il reste utilisé pour les changements de page.
+  const [isLoading, setIsLoading] = useState(false);
 
   const showLoading = useCallback(() => setIsLoading(true), []);
   const hideLoading = useCallback(() => {
