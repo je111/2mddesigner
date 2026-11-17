@@ -7,6 +7,8 @@
  */
 
 const DEFAULT_ORIGINS = [
+  'https://www.2md-designer.com',
+  'https://2md-designer.com',
   'https://2md-designer.vercel.app',
   'http://localhost:5173',
   'http://localhost:4173',
